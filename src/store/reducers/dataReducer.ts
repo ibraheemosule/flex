@@ -1,4 +1,4 @@
-import { IState } from "../../ts-types";
+import { IState, Object } from "../../ts-types";
 import { createSlice } from "@reduxjs/toolkit";
 import events from "../../../events";
 
@@ -9,9 +9,17 @@ const initialState: IState = {
 const dataSlice = createSlice({
   name: "data",
   initialState,
-  reducers: {},
+  reducers: {
+    sortEvents(state) {
+      state.events = state.events.sort((a: Object, b: Object) => {
+        return new Date(a.createdAt).getTime() < new Date(b.createdAt).getTime()
+          ? 1
+          : -1;
+      });
+    },
+  },
 });
 
-export const {} = dataSlice.actions;
+export const { sortEvents } = dataSlice.actions;
 
 export default dataSlice.reducer;
