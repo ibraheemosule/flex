@@ -1,10 +1,54 @@
 @import "./colors";
+@import "./typography";
 
 .comment {
   width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
+  display: block;
+  margin-top: 0.75rem;
+  padding: 1rem;
   background: #fff;
   border: 1px solid $borderCol;
   border-radius: 8px;
+
+  p {
+    text-transform: initial;
+  }
+
+  .info {
+    margin-top: 0.75rem;
+
+    span {
+      margin-right: 0.5rem;
+    }
+
+    .avi {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 22px;
+      font-size: 0.75rem;
+      text-align: center;
+      background: #dccae8;
+      border-radius: 100%;
+    }
+
+    .name {
+      @include md-text;
+    }
+
+    .time {
+      @include sm-text;
+    }
+  }
+
+  .text {
+    margin-top: 0.5rem;
+    @include sm-text;
+  }
+}
+
+@media (min-width: 576px) {
+  .comment {
+    padding: 1.5rem;
+  }
 }

@@ -4,7 +4,7 @@
 .user {
   display: flex;
   padding: 1rem 0;
-  border-bottom: 2px solid $lineCol;
+  border-bottom: 1px solid $lineCol;
 }
 .form_group {
   margin: 0 0.5rem 0.2rem 0;
@@ -21,11 +21,11 @@
       content: "";
       display: block;
       position: absolute;
-      top: 7px;
+      top: 6px;
       left: 4px;
       width: 5px;
       height: 7px;
-      border: solid #0079bf;
+      border: solid $secCol;
       border-width: 0 2px 2px 0;
       transform: rotate(45deg);
     }
@@ -40,10 +40,10 @@
       content: "";
       -webkit-appearance: none;
       background-color: transparent;
-      border: 1px solid #0079bf;
+      border: 1px solid #707070;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
         inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: 5px;
+      padding: 6px;
       display: inline-block;
       position: relative;
       vertical-align: middle;
@@ -52,50 +52,56 @@
     }
   }
 }
-
-.name {
-  display: flex;
-  flex-wrap: wrap;
-  @include md-text;
-
-  span {
-    @include sm-text;
-  }
-
-  .name_initial {
-    display: inline-block;
-    margin-right: 0.5rem;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    line-height: 18px;
-    font-size: 0.75rem;
-    text-align: center;
-    background: $secCol;
-    color: #fff;
-    border-radius: 100%;
-  }
-
-  .text {
-    margin-right: 0.3rem;
-  }
-
-  .status {
-    display: inline-block;
-    margin-right: 2rem;
+.activity {
+  flex-grow: 1;
+  .name {
+    display: flex;
     @include md-text;
 
+    p {
+      text-transform: capitalize;
+    }
+
     span {
-      width: 8px;
-      height: 8px;
-      margin: 0 0.2rem 0 0rem;
-      vertical-align: middle;
+      @include sm-text;
+      text-transform: initial;
+    }
+
+    .name_initial {
+      display: inline-block;
+      margin-right: 0.5rem;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      line-height: 18px;
+      font-size: 0.75rem;
+      text-align: center;
+      background: $secCol;
+      color: #fff;
       border-radius: 100%;
     }
-  }
 
-  .time {
-    display: inline-block;
+    .text {
+      margin-right: 0.3rem;
+    }
+
+    .status {
+      display: inline-block;
+      margin-right: 2rem;
+      @include md-text;
+
+      span {
+        width: 8px;
+        height: 8px;
+        margin: 0 0.2rem 0 0rem;
+        vertical-align: middle;
+        border-radius: 100%;
+      }
+    }
+
+    .time {
+      display: inline-block;
+    }
   }
 }
 
@@ -105,8 +111,8 @@
 
     input {
       &:checked + label::after {
-        top: 13px;
-        left: 13px;
+        top: 3px;
+        left: 7px;
         width: 6px;
         height: 10px;
       }
@@ -121,21 +127,23 @@
     }
   }
 
-  .name {
-    align-items: center;
+  .activity {
+    .name {
+      align-items: center;
 
-    .name_initial {
-      width: 28px;
-      height: 28px;
-      font-size: 1rem;
-      line-height: 26px;
-    }
+      .name_initial {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        line-height: 26px;
+      }
 
-    .status {
-      span {
-        width: 8px;
-        height: 8px;
-        margin: 0 0.2rem 0 0.5rem;
+      .status {
+        span {
+          width: 8px;
+          height: 8px;
+          margin: 0 0.2rem 0 0.5rem;
+        }
       }
     }
   }
