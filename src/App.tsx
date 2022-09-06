@@ -1,12 +1,14 @@
 import Layout from "./components/Layout";
 import User from "./components/User";
+import ShowMore from "./components/ShowMore";
 
 function App() {
   return (
     <Layout>
-      <div className="App">
+      <>
         <User />
-      </div>
+        <ShowMore />
+      </>
     </Layout>
   );
 }

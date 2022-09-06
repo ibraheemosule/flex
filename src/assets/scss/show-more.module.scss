@@ -1,0 +1,37 @@
+@import "./colors";
+@import "./typography";
+
+.show_more {
+  margin-top: 2rem;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+
+  span {
+    margin-right: 0.5rem;
+  }
+
+  .avi {
+    vertical-align: sub;
+  }
+
+  .event {
+    @include md-text;
+    color: $secCol;
+    margin-left: 1rem;
+    transition: color 0.1s ease-in;
+  }
+}
+
+.show_more:hover {
+  .event {
+    color: $textCol;
+  }
+}
+
+@media (min-width: 576px) {
+  .show_more {
+    margin-top: 2.5rem;
+  }
+}
