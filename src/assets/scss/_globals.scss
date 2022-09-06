@@ -1,0 +1,30 @@
+$pryCol: #382424;
+$secCol: #9d2af2;
+$borderCol: #efdff4;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  padding: 1rem;
+  margin: auto;
+  border: 2px;
+  max-width: 699px;
+  border: 1px solid $borderCol;
+  border-radius: 20px;
+
+  @media (min-width: 768px) {
+    padding: 2.25rem;
+  }
+}
