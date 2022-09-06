@@ -1,6 +1,4 @@
-$pryCol: #382424;
-$secCol: #9d2af2;
-$borderCol: #efdff4;
+@import "./colors";
 
 *,
 *::after,
@@ -8,6 +6,8 @@ $borderCol: #efdff4;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 body {

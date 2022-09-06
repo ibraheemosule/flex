@@ -1,0 +1,229 @@
+@import "./colors";
+
+.user {
+  display: flex;
+}
+.form_group {
+  margin: 0 0.5rem 0.2rem 0;
+
+  input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+
+    &:checked + label::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      width: 5px;
+      height: 7px;
+      border: solid #0079bf;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  label {
+    position: relative;
+    cursor: pointer;
+    border-radius: 100%;
+
+    &::before {
+      content: "";
+      -webkit-appearance: none;
+      background-color: transparent;
+      border: 1px solid #0079bf;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+      padding: 5px;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 100%;
+    }
+  }
+}
+
+.name {
+  display: flex;
+
+  span {
+    color: $textCol;
+    font-size: 0.75rem;
+  }
+
+  .name_initial {
+    display: inline-block;
+    margin-right: 0.5rem;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    line-height: 18px;
+    font-size: 0.75rem;
+    text-align: center;
+    background: $secCol;
+    color: #fff;
+    border-radius: 100%;
+  }
+
+  .status {
+    display: inline-block;
+
+    span {
+      width: 8px;
+      height: 8px;
+      margin: 0 0.2rem 0 0rem;
+      vertical-align: middle;
+      border-radius: 100%;
+    }
+  }
+
+  .time {
+    display: inline-block;
+    margin-left: 2rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .form_group {
+    margin: 0 1.5rem 0 0;
+
+    input {
+      &:checked + label::after {
+        top: 13px;
+        left: 13px;
+        width: 6px;
+        height: 10px;
+      }
+    }
+
+    label {
+      padding: 8px;
+      vertical-align: sub;
+
+      &::before {
+        padding: 8px;
+      }
+    }
+  }
+
+  .name {
+    align-items: center;
+    span {
+      font-size: 0.875rem;
+    }
+
+    .name_initial {
+      width: 28px;
+      height: 28px;
+      font-size: 1rem;
+      line-height: 26px;
+    }
+
+    .status {
+      font-size: 1rem;
+      color: $pryCol;
+      span {
+        width: 8px;
+        height: 8px;
+        margin: 0 0.2rem 0 0.5rem;
+      }
+    }
+
+    .time {
+      margin-left: 2rem;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+// .form_group {
+//   display: inline-block;
+//   margin: 0 1.5rem 0.95rem 0;
+
+//   input {
+//     padding: 0;
+//     height: initial;
+//     width: initial;
+//     margin-bottom: 0;
+//     display: none;
+//     cursor: pointer;
+
+//     &:checked + label::after {
+//       content: "";
+//       display: block;
+//       position: absolute;
+//       top: 5px;
+//       left: 6px;
+//       width: 6px;
+//       height: 10px;
+//       border: solid #0079bf;
+//       border-width: 0 2px 2px 0;
+//       transform: rotate(45deg);
+//     }
+//   }
+
+//   label {
+//     position: relative;
+//     cursor: pointer;
+//     border-radius: 100%;
+
+//     &::before {
+//       content: "";
+//       -webkit-appearance: none;
+//       background-color: transparent;
+//       border: 1px solid #0079bf;
+//       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+//         inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+//       padding: 8px;
+//       display: inline-block;
+//       position: relative;
+//       vertical-align: middle;
+//       cursor: pointer;
+//       border-radius: 100%;
+//     }
+//   }
+// }
+
+// .name {
+//   display: inline;
+
+//   span {
+//     color: $textCol;
+//     font-size: 0.875rem;
+//   }
+
+//   .name_initial {
+//     display: inline-block;
+//     margin-right: 1rem;
+//     width: 28px;
+//     aspect-ratio: 1/1;
+//     line-height: 26px;
+//     font-size: 1rem;
+//     text-align: center;
+//     background: $secCol;
+//     color: #fff;
+//     border-radius: 100%;
+//   }
+
+//   .status {
+//     display: inline-block;
+//     width: 8px;
+//     height: 8px;
+//     margin: 0 0.2rem 0 0.5rem;
+//     vertical-align: middle;
+//     border-radius: 100%;
+//   }
+
+//   .time {
+//     margin-left: 2rem;
+//     font-size: 0.75rem;
+//   }
+// }
