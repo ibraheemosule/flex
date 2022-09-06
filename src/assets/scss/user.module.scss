@@ -1,7 +1,10 @@
 @import "./colors";
+@import "./typography";
 
 .user {
   display: flex;
+  padding: 1rem 0;
+  border-bottom: 2px solid $lineCol;
 }
 .form_group {
   margin: 0 0.5rem 0.2rem 0;
@@ -52,10 +55,11 @@
 
 .name {
   display: flex;
+  flex-wrap: wrap;
+  @include md-text;
 
   span {
-    color: $textCol;
-    font-size: 0.75rem;
+    @include sm-text;
   }
 
   .name_initial {
@@ -72,8 +76,14 @@
     border-radius: 100%;
   }
 
+  .text {
+    margin-right: 0.3rem;
+  }
+
   .status {
     display: inline-block;
+    margin-right: 2rem;
+    @include md-text;
 
     span {
       width: 8px;
@@ -86,8 +96,6 @@
 
   .time {
     display: inline-block;
-    margin-left: 2rem;
-    font-size: 0.75rem;
   }
 }
 
@@ -105,7 +113,6 @@
     }
 
     label {
-      padding: 8px;
       vertical-align: sub;
 
       &::before {
@@ -116,9 +123,6 @@
 
   .name {
     align-items: center;
-    span {
-      font-size: 0.875rem;
-    }
 
     .name_initial {
       width: 28px;
@@ -128,102 +132,11 @@
     }
 
     .status {
-      font-size: 1rem;
-      color: $pryCol;
       span {
         width: 8px;
         height: 8px;
         margin: 0 0.2rem 0 0.5rem;
       }
     }
-
-    .time {
-      margin-left: 2rem;
-      font-size: 0.75rem;
-    }
   }
 }
-
-// .form_group {
-//   display: inline-block;
-//   margin: 0 1.5rem 0.95rem 0;
-
-//   input {
-//     padding: 0;
-//     height: initial;
-//     width: initial;
-//     margin-bottom: 0;
-//     display: none;
-//     cursor: pointer;
-
-//     &:checked + label::after {
-//       content: "";
-//       display: block;
-//       position: absolute;
-//       top: 5px;
-//       left: 6px;
-//       width: 6px;
-//       height: 10px;
-//       border: solid #0079bf;
-//       border-width: 0 2px 2px 0;
-//       transform: rotate(45deg);
-//     }
-//   }
-
-//   label {
-//     position: relative;
-//     cursor: pointer;
-//     border-radius: 100%;
-
-//     &::before {
-//       content: "";
-//       -webkit-appearance: none;
-//       background-color: transparent;
-//       border: 1px solid #0079bf;
-//       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
-//         inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-//       padding: 8px;
-//       display: inline-block;
-//       position: relative;
-//       vertical-align: middle;
-//       cursor: pointer;
-//       border-radius: 100%;
-//     }
-//   }
-// }
-
-// .name {
-//   display: inline;
-
-//   span {
-//     color: $textCol;
-//     font-size: 0.875rem;
-//   }
-
-//   .name_initial {
-//     display: inline-block;
-//     margin-right: 1rem;
-//     width: 28px;
-//     aspect-ratio: 1/1;
-//     line-height: 26px;
-//     font-size: 1rem;
-//     text-align: center;
-//     background: $secCol;
-//     color: #fff;
-//     border-radius: 100%;
-//   }
-
-//   .status {
-//     display: inline-block;
-//     width: 8px;
-//     height: 8px;
-//     margin: 0 0.2rem 0 0.5rem;
-//     vertical-align: middle;
-//     border-radius: 100%;
-//   }
-
-//   .time {
-//     margin-left: 2rem;
-//     font-size: 0.75rem;
-//   }
-// }

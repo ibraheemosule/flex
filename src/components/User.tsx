@@ -11,13 +11,20 @@ const User: React.FC = () => {
       <div className={s.name}>
         <span className={s.name_initial}>D</span>
         <p>
-          Daniel James <span>has changed Status to</span>
-          <span className={s.status}>
-            <span className={s.status} style={{ background: "red" }}></span>
-            Completed
-          </span>
-          <span className={s.time}>1 day ago</span>
+          Daniel James{" "}
+          {
+            <>
+              <span className={s.text}>has changed Status to </span>
+              <span className={s.status}>
+                <span className={s.status} style={{ background: "red" }}></span>
+                Completed
+              </span>
+              <span className={s.time}>1 day ago</span>
+            </>
+          }
         </p>
+
+        <Comment />
       </div>
     </section>
   );

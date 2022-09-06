@@ -1,1 +1,15 @@
 @import "_globals.scss";
+
+.container {
+  width: 100%;
+  padding: 1rem;
+  margin: auto;
+  border: 2px;
+  max-width: 699px;
+  border: 1px solid $borderCol;
+  border-radius: 20px;
+
+  @media (min-width: 768px) {
+    padding: 1.25rem 2.25rem;
+  }
+}
