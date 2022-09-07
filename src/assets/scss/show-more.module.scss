@@ -2,31 +2,43 @@
 @import "./typography";
 
 .show_more {
+  position: relative;
   margin-top: 2rem;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  cursor: pointer;
 
-  span {
-    margin-right: 0.5rem;
-  }
-
-  .avi {
-    vertical-align: sub;
-  }
-
-  .event {
-    @include md-text;
-    color: $secCol;
-    margin-left: 1rem;
-    transition: color 0.1s ease-in;
-  }
-}
-
-.show_more:hover {
-  .event {
+  p {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translate(-50%);
     color: $textCol;
+  }
+
+  button {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+
+    span {
+      margin-right: 0.5rem;
+    }
+
+    .avi {
+      vertical-align: sub;
+    }
+
+    .event {
+      @include md-text;
+      color: $secCol;
+      margin-left: 1rem;
+      transition: color 0.1s ease-in;
+    }
+  }
+
+  button:hover {
+    .event {
+      color: $textCol;
+    }
   }
 }
 
