@@ -1,5 +1,6 @@
 export interface IState {
   events: Object[];
+  slicedEvents: Object[];
 }
 
 export type Object = IActivity | IComment;

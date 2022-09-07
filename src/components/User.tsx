@@ -2,10 +2,9 @@ import s from "../assets/scss/user.module.scss";
 import Comment from "./Comment";
 import { useAppSelector } from "../store/hooks";
 import { Object } from "../ts-types";
-import { useEffect } from "react";
 
 const User: React.FC = () => {
-  const events = useAppSelector(state => state.data.events);
+  const events = useAppSelector(state => state.data.slicedEvents);
 
   const formatDate = (date: string): number => {
     const eventDate = Date.now() - new Date(date).getTime();
