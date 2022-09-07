@@ -2,13 +2,14 @@ export interface IState {
   events: Object[];
 }
 
-export type Object = IComment | IActivity;
+export type Object = IActivity | IComment;
 
 export interface IComment {
   type: string;
   createdAt: string;
   author: string;
-  message: IMessage;
+  message?: IMessage;
+  activity?: Activity;
 }
 
 export interface IMessage {
