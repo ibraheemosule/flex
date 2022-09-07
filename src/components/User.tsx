@@ -3,6 +3,13 @@ import Comment from "./Comment";
 import { useAppSelector } from "../store/hooks";
 import { Object } from "../ts-types";
 
+const statusColors = {
+  Completed: "green",
+  Pending: "#F28282",
+} as {
+  [key: string]: string;
+};
+
 const User: React.FC = () => {
   const events = useAppSelector(state => state.data.slicedEvents);
 
@@ -13,14 +20,6 @@ const User: React.FC = () => {
 
   return (
     <>
-      <button
-        style={{ visibility: "hidden" }}
-        onClick={() => {
-          console.log("working");
-        }}
-      >
-        dj
-      </button>
       {events.map((ev: Object, i: number) => {
         const e = { ...ev };
         const isAuthorSame = e.author !== events[i - 1]?.author;
@@ -45,7 +44,14 @@ const User: React.FC = () => {
                     <>
                       <span className={s.text}>has changed Status to </span>
                       <span className={s.status}>
-                        <span className={s.status}></span>
+                        <span
+                          style={{
+                            background:
+                              e.activity?.status !== undefined
+                                ? statusColors[e.activity.status]
+                                : "#F28282",
+                          }}
+                        ></span>
                         {e.activity?.status}
                       </span>
                       <span className={s.time}>

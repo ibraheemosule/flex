@@ -87,7 +87,7 @@
     }
 
     .text {
-      margin-right: 0.3rem;
+      margin-right: 0.2rem;
     }
 
     .status {
@@ -98,9 +98,11 @@
       span {
         width: 8px;
         height: 8px;
+        display: inline-block;
         margin: 0 0.2rem 0 0rem;
         vertical-align: middle;
         border-radius: 100%;
+        background-color: blue;
       }
     }
 

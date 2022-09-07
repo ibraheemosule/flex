@@ -18,7 +18,7 @@ const ShowMore: React.FC = () => {
       <span className={s.avi}>
         <img src={fileIcon} alt="file icon to view more" />
       </span>
-      <span className={s.event}>Show 30 more events</span>
+      <span className={s.event}>Show more events</span>
     </button>
   );
 };
