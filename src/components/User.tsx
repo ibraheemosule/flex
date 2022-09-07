@@ -2,21 +2,10 @@ import s from "../assets/scss/user.module.scss";
 import Comment from "./Comment";
 import { useAppSelector } from "../store/hooks";
 import { Object } from "../ts-types";
-
-const statusColors = {
-  Completed: "green",
-  Pending: "#F28282",
-} as {
-  [key: string]: string;
-};
+import { statusColors, formatDate, checkInput } from "../assets/utils";
 
 const User: React.FC = () => {
   const events = useAppSelector(state => state.data.slicedEvents);
-
-  const formatDate = (date: string): number => {
-    const eventDate = Date.now() - new Date(date).getTime();
-    return Math.floor(eventDate / 1000 / 86400);
-  };
 
   return (
     <>
@@ -31,7 +20,11 @@ const User: React.FC = () => {
             key={ev.createdAt}
           >
             <div className={`${s.form_group} ${!isAuthorSame && s.hide}`}>
-              <input type="checkbox" id={ev.createdAt} />
+              <input
+                onClick={e => checkInput(e)}
+                type="checkbox"
+                id={ev.createdAt}
+              />
               <label htmlFor={ev.createdAt}></label>
             </div>
 
